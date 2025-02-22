@@ -68,16 +68,16 @@ string insertAtTheBeginning(int num){
         return "\nAn element is sucessfully inserted at the beginning!\n";
     
     return "\nThe array is full. Please remove elements before inserting new one.\n";
-}
 
+}
 string insertAtTheGivenPosition(int num, int ElementAfter){
     if(numElem != maxElem){
-        int position;
-        for(int i = 0; i <= maxElem; i++){
+        int position = binarySearch(ElementAfter, 0, numElem)
+        /*for(int i = 0; i <= maxElem; i++){
             if(myArray[i] == ElementAfter){
                 position = i;
                 break;
-            }
+            } */
     }
     for(int i = numElem; i>=position; i--){
         myArray[i+1] = myArray[i];
@@ -88,10 +88,7 @@ string insertAtTheGivenPosition(int num, int ElementAfter){
     
     return "\nAn element is sucessfully inserted at the specified location!\n";
     }
-    
-    return "\nThe array is full. Please remove elements before inserting new one. \n";
-    
-}
+
 
 string insertAtSortedArray(int num){
     if(numElem != maxElem){
@@ -135,15 +132,15 @@ string deleteFromTheBeginning(){
     return "\nThe array underflow! Delete is not possible.\n";
 }
 
-string deleteFromTheGiven(int element){
+string deleteFromTheGivenElement(int element){
     if(numElem != 0){
-        int index;
-        for(int i = 0; i <= numElem; i++){
+        int index = binarySearch(int element, 0, numElem);
+        /*for(int i = 0; i <= numElem; i++){
             if(myArray[i] == element){
                 index = i;
                 break;
             }
-        }
+        } */
     
         for(int i = index; i <= numElem; i++){
             myArray[i] = myArray[i+1];
@@ -158,12 +155,19 @@ string deleteFromTheGiven(int element){
 int main(){
     
     cout << insertAtTheBeginning(3);
+    traverseArray();
     cout << insertAtTheEnd(7);
+    traverseArray();
     cout << insertAtTheEnd(9);
+    traverseArray();
     cout << insertAtTheBeginning(20);
+    traverseArray();
     cout << insertAtTheGivenPosition(37,7);
+    traverseArray();
     cout << insertAtTheBeginning(256);
+    traverseArray();
     cout << insertAtTheGivenPosition(128,9);
+    traverseArray();
     cout << insertAtTheBeginning(19);
     traverseArray();
     
